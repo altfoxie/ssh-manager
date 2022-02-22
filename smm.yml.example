@@ -2,20 +2,14 @@
   aliases:
     - r
     - rh
-
   hostname: r.mxf.su
   port: 228
-
   username: altfoxie
   password: beb
 
-
 - name: Sweet
-
   hostname: r.mxf.su
-
   username: altfoxie
   key_file: ~/.ssh/id_lol
-
   force_tty: yes
   command: fish
