@@ -35,15 +35,15 @@ func selectMenu(servers []*server) *server {
 
 func selectArg(servers []*server) *server {
 	query := strings.ToLower(strings.Join(os.Args[1:], " "))
-	for _, server := range servers {
-		for _, alias := range server.Aliases {
+	for _, srv := range servers {
+		for _, alias := range srv.Aliases {
 			if strings.ToLower(alias) == query {
-				return server
+				return srv
 			}
 		}
 
-		if strings.ToLower(server.Name) == query || strings.ToLower(server.Hostname) == query {
-			return server
+		if strings.ToLower(srv.Name) == query || strings.ToLower(srv.Hostname) == query || strings.ToLower(srv.Username + "@" + srv.Hostname) == query {
+			return srv
 		}
 	}
 
